@@ -2,17 +2,7 @@ import {Component, Input, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'favorite',
-  template: `
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <i
-    class="glyphicon"
-    [class.glyphicon-star-empty]="!isFavorite"
-    [class.glyphicon-star]="isFavorite"
-    (click)="onClick()">
-  </i>
-  `,
+  templateUrl: 'app/favorite.template.html', //this adds an extra HTTP request. So if code of template is small then inline it. The extra template will be downloaded only once and then it will be cached
   outputs: ['change:favoriteChange'] //with aliasing
   //, inputs : ['isFavorite'] //this is 2nd approach which does not require import and decorator. This is better way.
 })
