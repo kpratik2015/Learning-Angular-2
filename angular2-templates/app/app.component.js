@@ -17,7 +17,10 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <div [hidden]=\"courses.length == 0\">\n      List of courses\n    </div>\n    <div *ngIf=\"courses.length == 0\">\n      You don't have any courses.\n    </div> <br/>\n\n    <ul class=\"nav nav-pills\">\n      <li [class.active]=\"viewMode == 'map'\" ><a (click)=\"viewMode='map'\" >Map View</a></li>\n      <li [class.active]=\"viewMode == 'list'\" ><a (click)=\"viewMode='list'\" >List View</a></li>\n    </ul>\n    <div [ngSwitch]=\"viewMode\">\n      <template *ngSwitchCase=\"'map'\" ngSwitchDefault>Map View Content</template>\n\n      <template *ngSwitchCase=\"'list'\" >List View Content</template>\n    </div>\n  " //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
+        template: "\n    <div [hidden]=\"courses.length == 0\">\n      List of courses\n    </div>\n    <div *ngIf=\"courses.length == 0\">\n      You don't have any courses.\n    </div> <br/>\n\n    <ul class=\"nav nav-pills\">\n      <li [class.active]=\"viewMode == 'map'\" ><a (click)=\"viewMode='map'\" >Map View</a></li>\n      <li [class.active]=\"viewMode == 'list'\" ><a (click)=\"viewMode='list'\" >List View</a></li>\n    </ul>\n    <div [ngSwitch]=\"viewMode\">\n      <template [ngSwitchCase]=\"'map'\" ngSwitchDefault>Map View Content</template>\n\n      <template [ngSwitchCase]=\"'list'\" >List View Content</template>\n    </div>\n  " //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
+        /*
+        Note: In Angular v4 <template> has been deprecated in favour of <ng-template> and will be removed in v5. In Angular v2.x releases <template> is still valid.
+        */
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
