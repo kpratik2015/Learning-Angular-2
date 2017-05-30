@@ -15,9 +15,14 @@ var AppComponent = (function () {
         };
         this.post = {
             title: "Title",
-            isFavorite: true
+            isFavorite: true,
+            voteCount: 10,
+            myVote: 0
         };
     }
+    AppComponent.prototype.onVote = function ($event) {
+        console.log($event);
+    };
     AppComponent.prototype.onFavoriteChange = function ($event) {
         console.log($event);
     };
@@ -26,7 +31,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<messages></messages>\n  <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\" style=\"margin-left:50px\"></favorite>\n  <heart [heartNumber]=\"tweet.heartNumber\" [isHeart]=\"tweet.isHeart\" ></heart> \n  " //using messages component
+        template: "<messages></messages>\n  <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\" style=\"margin-left:50px\"></favorite>\n  <heart [heartNumber]=\"tweet.heartNumber\" [isHeart]=\"tweet.isHeart\" ></heart> <br/>\n  <vote></vote> <br/>\n  <voter \n  \t[voteCount]=\"post.voteCount\"\n  \t[myVote]=\"post.myVote\"\n  \t(vote)=\"onVote($event)\">\n  </voter>\n  " //using messages component
         //WITH ALIAS:
         //template: '<messages></messages><favorite [is-favorite]="post.isFavorite" style="margin-left:50px"></favorite>'
         //previously we had to use directives to register the component

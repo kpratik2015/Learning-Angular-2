@@ -3,7 +3,13 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `<messages></messages>
   <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)" style="margin-left:50px"></favorite>
-  <heart [heartNumber]="tweet.heartNumber" [isHeart]="tweet.isHeart" ></heart> 
+  <heart [heartNumber]="tweet.heartNumber" [isHeart]="tweet.isHeart" ></heart> <br/>
+  <vote></vote> <br/>
+  <voter 
+  	[voteCount]="post.voteCount"
+  	[myVote]="post.myVote"
+  	(vote)="onVote($event)">
+  </voter>
   `//using messages component
   //WITH ALIAS:
   //template: '<messages></messages><favorite [is-favorite]="post.isFavorite" style="margin-left:50px"></favorite>'
@@ -13,6 +19,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { 
 
+	onVote($event) {
+		console.log($event);
+	}
+
 	tweet = {
 		heartNumber: 10,
 		isHeart: false
@@ -20,7 +30,9 @@ export class AppComponent {
 
 	post = {
 		title: "Title",
-		isFavorite: true
+		isFavorite: true,
+		voteCount: 10,
+		myVote: 0
 	}
 
 	onFavoriteChange($event) {
