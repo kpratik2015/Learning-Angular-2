@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -38,12 +38,23 @@ import { Component } from '@angular/core';
     <br/>
     {{ movie | json }}
 
-     <br />
-     ==================================================
-     <br/>
-     {{ post.title }}
-     <br/>
-     {{ post.body | summary:10 }}
+    <br />
+    ==================================================
+    <br/>
+    {{ post.title }}
+    <br/>
+    {{ post.body | summary:10 }}
+
+    <br/>
+
+    <i
+     class="glyphicon"
+     [ngClass]="{
+       'glyphicon-star-empty': !isFavorite,
+       'glyphicon-star': isFavorite
+     }"
+     (click)="onClick()">
+    </i>
 
   `  //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
       /*
@@ -54,6 +65,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent { 
   courses = ['Course1','Course2','Course3'];
+
+  @Input() isFavorite = false;
+
+  onClick() {
+    this.isFavorite = !this.isFavorite;  //toggling
+  }
 
   post = {
     title: "Inception Review",
