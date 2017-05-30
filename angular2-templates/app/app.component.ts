@@ -37,14 +37,32 @@ import { Component } from '@angular/core';
     {{ movie.releaseDate | date:'MMM yyyy'}}
     <br/>
     {{ movie | json }}
+
+     <br />
+     ==================================================
+     <br/>
+     {{ post.title }}
+     <br/>
+     {{ post.body | summary:10 }}
+
   `  //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
       /*
       Note: In Angular v4 <template> has been deprecated in favour of <ng-template> and will be removed in v5. In Angular v2.x releases <template> is still valid.
       */
+  
 
 })
 export class AppComponent { 
   courses = ['Course1','Course2','Course3'];
+
+  post = {
+    title: "Inception Review",
+    body: `
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum ut ex. Sed ullamcorper
+      , leo nec maximum vestibulum, aug
+      pretium et vitae est.
+    `
+  }
 
   movie = {
     title: "Inception",

@@ -7,20 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var summary_pipe_1 = require("./summary.pipe");
-var AppModule = (function () {
-    function AppModule() {
+var SummaryPipe = (function () {
+    function SummaryPipe() {
     }
-    return AppModule;
+    SummaryPipe.prototype.transform = function (value, maxWords) {
+        var limit = (maxWords) ? maxWords : 50;
+        if (value)
+            return value.substring(0, limit) + "...";
+    };
+    return SummaryPipe;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, summary_pipe_1.SummaryPipe],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+SummaryPipe = __decorate([
+    core_1.Pipe({ name: 'summary' })
+], SummaryPipe);
+exports.SummaryPipe = SummaryPipe;
+//# sourceMappingURL=summary.pipe.js.map
