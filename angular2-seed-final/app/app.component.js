@@ -5,10 +5,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var tweet_service_1 = require("./tweet.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(tweetService) {
         this.tweet = {
             heartNumber: 10,
             isHeart: false
@@ -19,6 +23,7 @@ var AppComponent = (function () {
             voteCount: 10,
             myVote: 0
         };
+        this.tweets = tweetService.getTweets();
     }
     AppComponent.prototype.onVote = function ($event) {
         console.log($event);
@@ -31,11 +36,12 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<messages></messages>\n  <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\" style=\"margin-left:50px\"></favorite>\n  <heart [heartNumber]=\"tweet.heartNumber\" [isHeart]=\"tweet.isHeart\" ></heart> <br/>\n  <vote></vote> <br/>\n  <voter \n  \t[voteCount]=\"post.voteCount\"\n  \t[myVote]=\"post.myVote\"\n  \t(vote)=\"onVote($event)\">\n  </voter>\n  " //using messages component
+        template: "<messages></messages>\n  <favorite [isFavorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\" style=\"margin-left:50px\"></favorite>\n  <heart [heartNumber]=\"tweet.heartNumber\" [isHeart]=\"tweet.isHeart\" ></heart> <br/>\n  <vote></vote> <br/>\n  <voter \n  \t[voteCount]=\"post.voteCount\"\n  \t[myVote]=\"post.myVote\"\n  \t(vote)=\"onVote($event)\">\n  </voter> <br/>\n\n  <div *ngFor=\"let tweet of tweets\">\n\t<tweet [data]=\"tweet\"></tweet>\n  </div>\n  " //using messages component
         //WITH ALIAS:
         //template: '<messages></messages><favorite [is-favorite]="post.isFavorite" style="margin-left:50px"></favorite>'
         //previously we had to use directives to register the component
-    })
+    }),
+    __metadata("design:paramtypes", [tweet_service_1.TweetService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

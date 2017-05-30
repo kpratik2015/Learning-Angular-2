@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {TweetComponent} from './tweet.component'
+import {TweetService} from './tweet.service'
+
 @Component({
   selector: 'my-app',
   template: `<messages></messages>
@@ -9,7 +12,11 @@ import { Component } from '@angular/core';
   	[voteCount]="post.voteCount"
   	[myVote]="post.myVote"
   	(vote)="onVote($event)">
-  </voter>
+  </voter> <br/>
+
+  <div *ngFor="let tweet of tweets">
+	<tweet [data]="tweet"></tweet>
+  </div>
   `//using messages component
   //WITH ALIAS:
   //template: '<messages></messages><favorite [is-favorite]="post.isFavorite" style="margin-left:50px"></favorite>'
@@ -38,5 +45,11 @@ export class AppComponent {
 	onFavoriteChange($event) {
 		console.log($event);
 	}
+
+	tweets: any[];
+    
+    constructor(tweetService: TweetService){
+        this.tweets = tweetService.getTweets();
+    }
 
 }
