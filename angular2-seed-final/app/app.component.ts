@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
-  template: '<messages></messages><favorite [isFavorite]="post.isFavorite" style="margin-left:50px"></favorite>' //using messages component
+  template: '<messages></messages><favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)" style="margin-left:50px"></favorite>' //using messages component
   //WITH ALIAS:
   //template: '<messages></messages><favorite [is-favorite]="post.isFavorite" style="margin-left:50px"></favorite>'
   
@@ -13,6 +13,10 @@ export class AppComponent {
 	post = {
 		title: "Title",
 		isFavorite: true
+	}
+
+	onFavoriteChange($event) {
+		console.log($event);
 	}
 
 }

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'favorite',
@@ -12,7 +12,8 @@ import {Component, Input} from '@angular/core';
     [class.glyphicon-star]="isFavorite"
     (click)="onClick()">
   </i>
-  `
+  `,
+  outputs: ['change:favoriteChange'] //with aliasing
   //, inputs : ['isFavorite'] //this is 2nd approach which does not require import and decorator. This is better way.
 })
 
@@ -25,7 +26,15 @@ export class FavoriteComponent {
   //Other approach:
   //inputs: ['isFavorite:is-favorite']
 
+  change = new EventEmitter(); //shows redline at first so we need to import 
+
+  //Exposing to ouput
+
+
+  
+
   onClick() {
     this.isFavorite = !this.isFavorite;  //toggling
+    this.change.emit({ newValue : this.isFavorite }); //to publish change event. Pass object to send additional data. 
   }
 }
