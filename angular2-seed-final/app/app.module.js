@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var messages_component_1 = require("./messages.component");
 var messages_service_1 = require("./messages.service");
 var favorite_component_1 = require("./favorite.component");
+var heart_component_1 = require("./heart.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [messages_service_1.MessagesService]
     })
