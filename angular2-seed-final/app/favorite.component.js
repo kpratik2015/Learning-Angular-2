@@ -35,8 +35,9 @@ FavoriteComponent = __decorate([
     core_1.Component({
         selector: 'favorite',
         templateUrl: 'app/favorite.template.html',
-        outputs: ['change:favoriteChange'] //with aliasing
+        outputs: ['change:favoriteChange'],
         //, inputs : ['isFavorite'] //this is 2nd approach which does not require import and decorator. This is better way.
+        styles: ["\n     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  "]
     })
 ], FavoriteComponent);
 exports.FavoriteComponent = FavoriteComponent;
