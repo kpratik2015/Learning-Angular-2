@@ -7,21 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var summary_pipe_1 = require("./summary.pipe");
-var bootstrap_panel_component_1 = require("./bootstrap.panel.component");
-var AppModule = (function () {
-    function AppModule() {
+var BootstrapPanel = (function () {
+    function BootstrapPanel() {
     }
-    return AppModule;
+    return BootstrapPanel;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, summary_pipe_1.SummaryPipe, bootstrap_panel_component_1.BootstrapPanel],
-        bootstrap: [app_component_1.AppComponent]
+BootstrapPanel = __decorate([
+    core_1.Component({
+        selector: 'bs-panel',
+        template: "\n\n  <div class=\"panel panel-default\">\n  \t<div class=\"panel-heading\">\n  \t\t<ng-content select=\".heading\"></ng-content>\n  \t</div>\n  \t<div class=\"panel-body\">\n  \t\t<ng-content select=\".body\"></ng-content>\n  \t</div>\n  </div>\n\n  "
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], BootstrapPanel);
+exports.BootstrapPanel = BootstrapPanel;
+//# sourceMappingURL=bootstrap.panel.component.js.map

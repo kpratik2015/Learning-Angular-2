@@ -100,8 +100,15 @@ import { Component, Input } from '@angular/core';
     ==================================================
     <br/>
 
-    
+    <bs-panel>
+      <div class="heading">Heading</div>
+      <div class="body">This is the body</div>
+      <div class="body">This is another body</div>
+    </bs-panel>
 
+    <br/>
+    ==================================================
+    <br/>
 
   `  //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
       /*
