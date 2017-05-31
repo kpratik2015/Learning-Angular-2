@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var summary_pipe_1 = require("./summary.pipe");
 var bootstrap_panel_component_1 = require("./bootstrap.panel.component");
+var zippy_component_1 = require("./zippy.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,7 +20,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, summary_pipe_1.SummaryPipe, bootstrap_panel_component_1.BootstrapPanel],
+        declarations: [app_component_1.AppComponent, summary_pipe_1.SummaryPipe, bootstrap_panel_component_1.BootstrapPanel, zippy_component_1.ZippyComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

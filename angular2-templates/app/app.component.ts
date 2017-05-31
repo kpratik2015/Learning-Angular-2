@@ -110,6 +110,13 @@ import { Component, Input } from '@angular/core';
     ==================================================
     <br/>
 
+    <zippy title="Who can see my stuff?">
+        Content of who can see my stuff
+    </zippy>
+    <zippy title="Who can contact me?">
+        Content of who can contact me
+    </zippy>
+
   `  //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
       /*
       Note: In Angular v4 <template> has been deprecated in favour of <ng-template> and will be removed in v5. In Angular v2.x releases <template> is still valid.
