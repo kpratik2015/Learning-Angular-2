@@ -8,7 +8,11 @@ import { Component, Input } from '@angular/core';
     </div>
     <div *ngIf="courses.length == 0">
       You don't have any courses.
-    </div> <br/>
+    </div>
+
+    <br/>
+    ==================================================
+    <br/>
 
     <ul class="nav nav-pills">
       <li [class.active]="viewMode == 'map'" ><a (click)="viewMode='map'" >Map View</a></li>
@@ -18,14 +22,22 @@ import { Component, Input } from '@angular/core';
       <template [ngSwitchCase]="'map'" ngSwitchDefault>Map View Content</template>
 
       <template [ngSwitchCase]="'list'" >List View Content</template>
-    </div> <br/>
+    </div> 
+
+    <br/>
+    ==================================================
+    <br/>
 
     <ul>
       <li *ngFor="let course of courses, let i = index">
         {{ i + 1 }} - {{ course }}
       </li>
     </ul>
+
     <br/>
+    ==================================================
+    <br/>
+
     {{ movie.title | uppercase | lowercase }}
     <br/>
     {{ movie.rating | number:'2.2-2' }}
@@ -41,10 +53,13 @@ import { Component, Input } from '@angular/core';
     <br />
     ==================================================
     <br/>
+
     {{ post.title }}
     <br/>
     {{ post.body | summary:10 }}
 
+    <br/>
+    ==================================================
     <br/>
 
     <i
@@ -57,6 +72,8 @@ import { Component, Input } from '@angular/core';
     </i>
 
     <br/>
+    ==================================================
+    <br/>
 
     <button 
       [style.backgroundColor]="canSave ? '#337ab7' : 'gray'"
@@ -68,6 +85,24 @@ import { Component, Input } from '@angular/core';
       > 
       Submit </button>
 
+    <br/>
+    ==================================================
+    <br/>
+
+    <ul>
+
+      <li>Title: {{ task.title }}</li>
+      <li>Assigned to: {{ task.assignee?.name }}
+
+    </ul>
+
+    <br/>
+    ==================================================
+    <br/>
+
+    
+
+
   `  //template is by default part of HTML 5. It stays hidden until activated. If images or scripts are put in template then those also won't be loaded until template is activated.
       /*
       Note: In Angular v4 <template> has been deprecated in favour of <ng-template> and will be removed in v5. In Angular v2.x releases <template> is still valid.
@@ -76,6 +111,11 @@ import { Component, Input } from '@angular/core';
 
 })
 export class AppComponent { 
+
+  task = {
+    title: "Check Apps",
+    assignee: null
+  }
 
   canSave = true;
 
