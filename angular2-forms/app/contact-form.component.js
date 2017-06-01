@@ -10,8 +10,8 @@ var core_1 = require("@angular/core");
 var ContactFormComponent = (function () {
     function ContactFormComponent() {
     }
-    ContactFormComponent.prototype.log = function (x) {
-        console.log(x);
+    ContactFormComponent.prototype.onSubmit = function (form) {
+        console.log(form);
     };
     return ContactFormComponent;
 }());
