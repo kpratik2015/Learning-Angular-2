@@ -32,6 +32,11 @@ let SignUpFormComponent = class SignUpFormComponent {
     // 	password: new FormControl('', Validators.required)
     // }); //property
     signup() {
+        //var result = authService.login(this.form.value)
+        //result is boolean
+        this.form.controls['username'].setErrors({
+            invalidLogin: true
+        }); //To get access to one of the controls. Like username.
         console.log(this.form.value);
     }
 };

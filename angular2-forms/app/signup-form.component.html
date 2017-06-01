@@ -7,7 +7,8 @@
             class="form-control"
             formControlName="username">
         <div 
-            *ngIf="form.controls.username.pending">Checking for uniqueness...</div>    
+            *ngIf="form.controls.username.pending">Checking for uniqueness...</div> 
+
         <div *ngIf="form.controls.username.touched && form.controls.username.errors">
             <div
                 *ngIf = "form.controls.username.errors.required"
@@ -18,6 +19,9 @@
             <div
                 *ngIf="form.controls.username.errors.shouldBeUnique"
                 class="alert alert-danger">This username is already taken.</div>
+            <div
+                *ngIf="form.controls.username.errors.invalidLogin" 
+                class="alert alert-danger">Username or Password is invalid</div>
         </div>
             
     </div>
@@ -29,8 +33,9 @@
             class="form-control"
             formControlName="password">
         <div
-            *ngIf = "form.controls.password.touched && form.controls.password.errors.required" 
-            class="alert alert-danger">Password is required</div>
+            *ngIf = "form.controls.password.touched && form.controls.password.errors" 
+            class="alert alert-danger">
+        Password is required</div>
     </div>
     <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>
