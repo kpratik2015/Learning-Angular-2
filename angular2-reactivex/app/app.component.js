@@ -55,7 +55,8 @@ let AppComponent = class AppComponent {
         //keyups.subscribe(function(data){
         //console.log(data);
         //});
-        keyups.subscribe(data => console.log(data));
+        var subscription = keyups.subscribe(data => console.log(data));
+        subscription.unsubscribe();
     }
 };
 AppComponent = __decorate([

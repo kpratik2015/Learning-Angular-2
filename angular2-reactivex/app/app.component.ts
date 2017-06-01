@@ -30,7 +30,10 @@ export class AppComponent {
 			//console.log(data);
 		//});
 
-		keyups.subscribe(data => console.log(data));
+		var subscription = keyups.subscribe(data => console.log(data));
+		subscription.unsubscribe();
+
+
 	}
 
 	constructor(){
