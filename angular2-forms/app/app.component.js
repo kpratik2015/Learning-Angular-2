@@ -25,6 +25,12 @@ AppComponent = __decorate([
   <h2> Complex Validation </h2>
 
   <signup-form></signup-form> 
+
+  =========================================== <br/>
+
+  <h2> Change Password Form </h2>
+
+  <change-password-form></change-password-form>
     
   `
     })

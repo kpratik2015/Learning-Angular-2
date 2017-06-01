@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { SubscriptionFormComponent } from './subscription-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpFormComponent } from './signup-form.component';
+import { ChangePasswordFormComponent } from './change-password-form.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, ContactFormComponent, SubscriptionFormComponent, SignUpFormComponent ],
+  declarations: [ AppComponent, ContactFormComponent, SubscriptionFormComponent, SignUpFormComponent, ChangePasswordFormComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

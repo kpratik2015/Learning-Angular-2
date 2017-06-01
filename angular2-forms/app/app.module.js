@@ -14,12 +14,13 @@ const forms_1 = require("@angular/forms");
 const subscription_form_component_1 = require("./subscription-form.component");
 const forms_2 = require("@angular/forms");
 const signup_form_component_1 = require("./signup-form.component");
+const change_password_form_component_1 = require("./change-password-form.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
-        declarations: [app_component_1.AppComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SubscriptionFormComponent, signup_form_component_1.SignUpFormComponent],
+        declarations: [app_component_1.AppComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SubscriptionFormComponent, signup_form_component_1.SignUpFormComponent, change_password_form_component_1.ChangePasswordFormComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
