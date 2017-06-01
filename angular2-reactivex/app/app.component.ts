@@ -12,8 +12,12 @@ import { Observable } from 'rxjs/Rx';
 export class AppComponent { 
 
 	ngAfterViewInit(){
-		var keyups = Observable.fromEvent($("#search"), "keyup")
-		.map(e => e.target.value);
+		var keyups = Observable
+		.fromEvent($("#search"), "keyup")
+		.map(e => e.target.value)
+		.filter(text => text.length >= 3)
+		.debounceTime(400)
+		.distinctUntilChanged();
 
 		//Verbose:
 		//keyups.subscribe(function(data){

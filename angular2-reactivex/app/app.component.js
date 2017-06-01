@@ -39,8 +39,12 @@ let AppComponent = class AppComponent {
         */
     }
     ngAfterViewInit() {
-        var keyups = Rx_1.Observable.fromEvent($("#search"), "keyup")
-            .map(e => e.target.value);
+        var keyups = Rx_1.Observable
+            .fromEvent($("#search"), "keyup")
+            .map(e => e.target.value)
+            .filter(text => text.length >= 3)
+            .debounceTime(400)
+            .distinctUntilChanged();
         //Verbose:
         //keyups.subscribe(function(data){
         //console.log(data);
