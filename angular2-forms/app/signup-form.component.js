@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
-var usernameValidators_1 = require("./usernameValidators");
-var SignUpFormComponent = (function () {
-    function SignUpFormComponent(fb) {
+const core_1 = require("@angular/core");
+const forms_1 = require("@angular/forms");
+const usernameValidators_1 = require("./usernameValidators");
+let SignUpFormComponent = class SignUpFormComponent {
+    // '' -> default value
+    //2nd parameter -> one or more validators
+    //3rd parameter -> one or more async. validators
+    constructor(fb) {
         this.form = fb.group({
-            username: ['', forms_1.Validators.compose([
+            username: ['',
+                forms_1.Validators.compose([
                     forms_1.Validators.required,
                     usernameValidators_1.UsernameValidators.cannotContainSpace
-                ])],
+                ]),
+                usernameValidators_1.UsernameValidators.shouldBeUnique],
             password: ['', forms_1.Validators.required]
         });
     }
@@ -26,11 +31,10 @@ var SignUpFormComponent = (function () {
     // 	username: new FormControl('', Validators.required),
     // 	password: new FormControl('', Validators.required)
     // }); //property
-    SignUpFormComponent.prototype.signup = function () {
+    signup() {
         console.log(this.form.value);
-    };
-    return SignUpFormComponent;
-}());
+    }
+};
 SignUpFormComponent = __decorate([
     core_1.Component({
         selector: 'signup-form',

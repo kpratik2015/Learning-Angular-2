@@ -11,8 +11,11 @@
                 *ngIf = "form.controls.username.errors.required"
                 class="alert alert-danger">Username is required.</div>
             <div
-                *ngIf = "!form.controls.username.cannotContainSpace && !form.controls.username.errors.required" 
+                *ngIf = "form.controls.username.errors.cannotContainSpace" 
                 class="alert alert-danger">Username cannot contain space.</div>
+            <div
+                *ngIf="form.controls.username.errors.shouldBeUnique"
+                class="alert alert-danger">This username is already taken.</div>
         </div>
             
     </div>

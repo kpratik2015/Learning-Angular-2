@@ -6,19 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var contact_form_component_1 = require("./contact-form.component");
-var forms_1 = require("@angular/forms");
-var subscription_form_component_1 = require("./subscription-form.component");
-var forms_2 = require("@angular/forms");
-var signup_form_component_1 = require("./signup-form.component");
-var AppModule = (function () {
-    function AppModule() {
-    }
-    return AppModule;
-}());
+const core_1 = require("@angular/core");
+const platform_browser_1 = require("@angular/platform-browser");
+const app_component_1 = require("./app.component");
+const contact_form_component_1 = require("./contact-form.component");
+const forms_1 = require("@angular/forms");
+const subscription_form_component_1 = require("./subscription-form.component");
+const forms_2 = require("@angular/forms");
+const signup_form_component_1 = require("./signup-form.component");
+let AppModule = class AppModule {
+};
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],

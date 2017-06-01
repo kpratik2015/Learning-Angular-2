@@ -6,16 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-    }
-    return AppComponent;
-}());
+const core_1 = require("@angular/core");
+let AppComponent = class AppComponent {
+};
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n\n  <contact-form></contact-form>\n\n  =========================================== <br/>\n\n  <subscription-form></subscription-form> \n\n  =========================================== <br/>\n\n  <h2> Complex Validation </h2>\n\n  <signup-form></signup-form> \n    \n  "
+        template: `
+
+  <contact-form></contact-form>
+
+  =========================================== <br/>
+
+  <subscription-form></subscription-form> 
+
+  =========================================== <br/>
+
+  <h2> Complex Validation </h2>
+
+  <signup-form></signup-form> 
+    
+  `
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -6,20 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var SubscriptionFormComponent = (function () {
-    function SubscriptionFormComponent() {
+const core_1 = require("@angular/core");
+let SubscriptionFormComponent = class SubscriptionFormComponent {
+    constructor() {
         this.frequencies = [
             { id: 1, label: 'Daily' },
             { id: 2, label: 'Weekly' },
             { id: 3, label: 'Monthly' }
         ];
     }
-    SubscriptionFormComponent.prototype.onSubscribe = function (form) {
+    onSubscribe(form) {
         console.log(form.value);
-    };
-    return SubscriptionFormComponent;
-}());
+    }
+};
 SubscriptionFormComponent = __decorate([
     core_1.Component({
         selector: 'subscription-form',

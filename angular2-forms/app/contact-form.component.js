@@ -6,15 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var ContactFormComponent = (function () {
-    function ContactFormComponent() {
-    }
-    ContactFormComponent.prototype.onSubmit = function (form) {
+const core_1 = require("@angular/core");
+let ContactFormComponent = class ContactFormComponent {
+    onSubmit(form) {
         console.log(form);
-    };
-    return ContactFormComponent;
-}());
+    }
+};
 ContactFormComponent = __decorate([
     core_1.Component({
         selector: 'contact-form',
