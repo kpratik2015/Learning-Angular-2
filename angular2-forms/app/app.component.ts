@@ -8,7 +8,13 @@ import { Component, Input } from '@angular/core';
 
   =========================================== <br/>
 
-  <subscription-form></subscription-form>  
+  <subscription-form></subscription-form> 
+
+  =========================================== <br/>
+
+  <h2> Complex Validation </h2>
+
+  <signup-form></signup-form> 
     
   `
   

@@ -7,16 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var forms_1 = require("@angular/forms");
+var SignUpFormComponent = (function () {
+    function SignUpFormComponent() {
+        this.form = new forms_1.FormGroup({
+            username: new forms_1.FormControl('', forms_1.Validators.required),
+            password: new forms_1.FormControl('', forms_1.Validators.required)
+        }); //property
     }
-    return AppComponent;
+    SignUpFormComponent.prototype.signup = function () {
+        console.log(this.form.value);
+    };
+    return SignUpFormComponent;
 }());
-AppComponent = __decorate([
+SignUpFormComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n\n  <contact-form></contact-form>\n\n  =========================================== <br/>\n\n  <subscription-form></subscription-form> \n\n  =========================================== <br/>\n\n  <h2> Complex Validation </h2>\n\n  <signup-form></signup-form> \n    \n  "
+        selector: 'signup-form',
+        templateUrl: 'app/signup-form.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], SignUpFormComponent);
+exports.SignUpFormComponent = SignUpFormComponent;
+//# sourceMappingURL=signup-form.component.js.map

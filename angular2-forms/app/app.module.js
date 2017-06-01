@@ -12,6 +12,8 @@ var app_component_1 = require("./app.component");
 var contact_form_component_1 = require("./contact-form.component");
 var forms_1 = require("@angular/forms");
 var subscription_form_component_1 = require("./subscription-form.component");
+var forms_2 = require("@angular/forms");
+var signup_form_component_1 = require("./signup-form.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,8 +21,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SubscriptionFormComponent],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
+        declarations: [app_component_1.AppComponent, contact_form_component_1.ContactFormComponent, subscription_form_component_1.SubscriptionFormComponent, signup_form_component_1.SignUpFormComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
