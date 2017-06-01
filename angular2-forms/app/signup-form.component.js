@@ -11,10 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var usernameValidators_1 = require("./usernameValidators");
 var SignUpFormComponent = (function () {
     function SignUpFormComponent(fb) {
         this.form = fb.group({
-            username: ['', forms_1.Validators.required],
+            username: ['', forms_1.Validators.compose([
+                    forms_1.Validators.required,
+                    usernameValidators_1.UsernameValidators.cannotContainSpace
+                ])],
             password: ['', forms_1.Validators.required]
         });
     }
