@@ -44,7 +44,13 @@ let AppComponent = class AppComponent {
             .map(e => e.target.value)
             .filter(text => text.length >= 3)
             .debounceTime(400)
-            .distinctUntilChanged();
+            .distinctUntilChanged()
+            .flatMap(searchTerm => {
+            var url = "https://api.spotify.com/v1/search?type=artist&q=" + searchTerm;
+            //AJAX call:
+            var promise = $.getJSON(url);
+            return Rx_1.Observable.fromPromise(promise);
+        });
         //Verbose:
         //keyups.subscribe(function(data){
         //console.log(data);
