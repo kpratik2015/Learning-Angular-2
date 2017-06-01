@@ -7,16 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var SubscriptionFormComponent = (function () {
+    function SubscriptionFormComponent() {
+        this.frequencies = [
+            { id: 1, label: 'Daily' },
+            { id: 2, label: 'Weekly' },
+            { id: 3, label: 'Monthly' }
+        ];
     }
-    return AppComponent;
+    SubscriptionFormComponent.prototype.onSubscribe = function (form) {
+        console.log(form.value);
+    };
+    return SubscriptionFormComponent;
 }());
-AppComponent = __decorate([
+SubscriptionFormComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n\n  <contact-form></contact-form>\n\n  =========================================== <br/>\n\n  <subscription-form></subscription-form>  \n    \n  "
+        selector: 'subscription-form',
+        templateUrl: 'app/subscription-form.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], SubscriptionFormComponent);
+exports.SubscriptionFormComponent = SubscriptionFormComponent;
+//# sourceMappingURL=subscription-form.component.js.map
