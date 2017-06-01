@@ -1,5 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+//import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'my-app',
@@ -30,13 +38,17 @@ export class AppComponent {
 			//console.log(data);
 		//});
 
-		var subscription = keyups.subscribe(data => console.log(data));
-		subscription.unsubscribe();
+		keyups.subscribe(data => console.log(data));
+
+		//var subscription = keyups.subscribe(data => console.log(data));
+		//subscription.unsubscribe();
 
 
 	}
 
 	constructor(){
+
+		console.log(new Observable());  //for seeing how much code is imported. 
 
 /*		
 		//TRADITIONAL JQUERRY WAY:

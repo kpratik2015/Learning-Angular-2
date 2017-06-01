@@ -10,9 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const Rx_1 = require("rxjs/Rx");
+//import { Observable } from 'rxjs/Rx';
+const Observable_1 = require("rxjs/Observable");
+require("rxjs/add/operator/debounceTime");
+require("rxjs/add/operator/filter");
+require("rxjs/add/observable/fromEvent");
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/mergeMap");
+require("rxjs/add/observable/fromPromise");
+require("rxjs/add/operator/distinctUntilChanged");
 let AppComponent = class AppComponent {
     constructor() {
+        console.log(new Observable_1.Observable()); //for seeing how much code is imported. 
         /*
                 //TRADITIONAL JQUERRY WAY:
         
@@ -39,7 +48,7 @@ let AppComponent = class AppComponent {
         */
     }
     ngAfterViewInit() {
-        var keyups = Rx_1.Observable
+        var keyups = Observable_1.Observable
             .fromEvent($("#search"), "keyup")
             .map(e => e.target.value)
             .filter(text => text.length >= 3)
@@ -49,14 +58,15 @@ let AppComponent = class AppComponent {
             var url = "https://api.spotify.com/v1/search?type=artist&q=" + searchTerm;
             //AJAX call:
             var promise = $.getJSON(url);
-            return Rx_1.Observable.fromPromise(promise);
+            return Observable_1.Observable.fromPromise(promise);
         });
         //Verbose:
         //keyups.subscribe(function(data){
         //console.log(data);
         //});
-        var subscription = keyups.subscribe(data => console.log(data));
-        subscription.unsubscribe();
+        keyups.subscribe(data => console.log(data));
+        //var subscription = keyups.subscribe(data => console.log(data));
+        //subscription.unsubscribe();
     }
 };
 AppComponent = __decorate([
