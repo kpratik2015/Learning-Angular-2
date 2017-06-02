@@ -12,24 +12,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const post_service_1 = require("./post.service"); //IMPORT SERVICE
 let AppComponent = class AppComponent {
-    //Behind each class there is injector. We need to register the PostService and any of its dependency.
     constructor(_postService) {
         this._postService = _postService;
+        //Behind each class there is injector. We need to register the PostService and any of its dependency.
+        this.isLoading = true; //to render loader icon/text dynamically.
         //this._postService.createPost() //this expects any parameter which is wrong. In Typescript, any is default parameter unless explicitly specified.
         //this._postService.createPost({ userId: 1, title: "a", body: "b"});
     }
     //If we need to call the server we do it in ngOnInit
     ngOnInit() {
         this._postService.getPosts()
-            .subscribe(posts => console.log(posts[0].body));
+            .subscribe(posts => {
+            this.isLoading = false; //at subscribe stage the loading has finished.
+            console.log(posts[0].body);
+        });
     }
 };
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         template: `
-  
-  `,
+  	<div *ngIf="isLoading" >Getting data...</div>
+  `
+        //Above, we can use loader icon instead of text.
+        ,
         providers: [post_service_1.PostService]
     }),
     __metadata("design:paramtypes", [post_service_1.PostService])

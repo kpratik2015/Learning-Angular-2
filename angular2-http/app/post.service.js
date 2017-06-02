@@ -20,6 +20,7 @@ let PostService = class PostService {
     getPosts() {
         return this._http.get(this._url)
             .map(res => res.json());
+        //toPromise(); //this can be done. We need to import toPromise. Also, change : Observable<Post []> to : Promise<Post []>. 
     }
     createPost(post) {
         return this._http.post(this._url, JSON.stringify(post))
