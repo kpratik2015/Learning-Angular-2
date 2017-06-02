@@ -48,13 +48,13 @@ let AppComponent = class AppComponent {
         // Observable.of([1,2,3])
         // We can use the static Observable.interval() method to create a timer. This is useful for
         // running an asynchronous operation at specified intervals.
-        var observable = Rx_1.Observable.interval(5000);
-        observable
-            .flatMap(x => {
-            console.log("calling the server to get the latest news");
-            return Rx_1.Observable.of([1, 2, 3]);
-        })
-            .subscribe(news => console.log(news));
+        // var observable = Observable.interval(5000);
+        // observable
+        // 	.flatMap(x => {
+        // 		console.log("calling the server to get the latest news");
+        // 		return Observable.of([1,2,3]);
+        // 	})
+        // 	.subscribe( news => console.log(news));
         //We can use the forkJoin operator to run all observables in parallel and collect their last elements.
         var userStream = Rx_1.Observable.of({
             userId: 1, username: 'pratik'
