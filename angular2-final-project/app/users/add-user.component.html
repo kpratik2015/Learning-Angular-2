@@ -1,0 +1,86 @@
+<div class = "col-md-6 col-lg-6 well">
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.form)">
+	
+    <fieldset>
+    	<legend>User</legend>
+		<div class="form-group">
+		<label for="name">Name</label>
+        <input 
+            ngModel
+            name="name" 
+            #name="ngModel" 
+            id="name" 
+            type="text" 
+            class="form-control">  
+		</div>
+		<div class="form-group">
+		<label for="email">Email</label>
+        <input 
+            ngModel
+            name="email" 
+            #email="ngModel" 
+            id="email" 
+            type="text" 
+            class="form-control" >
+		</div>
+		<div class="form-group">
+		<label for="phone">Phone</label>
+        <input 
+            ngModel
+            name="phone" 
+            #phone="ngModel" 
+            id="phone" 
+            type="text" 
+            class="form-control" >
+		</div>
+
+    </fieldset>
+
+    <fieldset>
+    	<legend>Address</legend>
+		<div class="form-group">
+		<label for="street">Street</label>
+        <input 
+            ngModel
+            name="street" 
+            #street="ngModel" 
+            id="street" 
+            type="text" 
+            class="form-control" >		
+		</div>
+		<div class="form-group">
+		<label for="apartment">Apartment</label>
+        <input 
+            ngModel
+            name="apartment" 
+            #apartment="ngModel" 
+            id="apartment" 
+            type="text" 
+            class="form-control" >
+		</div>
+		<div class="form-group">
+		<label for="city">City</label>
+        <input 
+            ngModel
+            name="city" 
+            #city="ngModel" 
+            id="city" 
+            type="text" 
+            class="form-control" >
+		</div>
+		<div class="form-group">
+		<label for="zipcode">ZipCode</label>
+        <input 
+            ngModel
+            name="zipcode" 
+            #zipcode="ngModel" 
+            id="zipcode" 
+            type="text" 
+            class="form-control" >
+		</div>
+    </fieldset>
+	<button class="btn btn-primary" type="submit" [disabled]="!f.valid">Save</button>
+  </form>
+
+</div>
